@@ -22,7 +22,7 @@ function Header() {
   };
 
   return (
-    <header className="flex justify-between items-center p-4 bg-gray-950 text-white mb-5">
+    <header className="flex flex-col sm:flex-row justify-between items-center p-4 bg-gray-950 text-white mb-5">
       <Link
         onClick={() => dispatch(clearSearchResults())}
         to="/"
@@ -31,22 +31,22 @@ function Header() {
         <img
           src={logo}
           alt="Logo"
-          className="h-12 w-auto sm:h-16 md:h-20 lg:h-24 rounded-full"
+          className="h-12 w-auto sm:h-16 md:h-20 lg:h-24 rounded-full mb-4 sm:mb-0"
         />
       </Link>
 
-      <span className="text-2xl font-bold text-blue-500 ml-20">
+      <span className="text-2xl font-bold text-blue-500 sm:ml-20 mb-4 sm:mb-0">
         <span className="text-blue-500">mini</span>
         <span className="text-white">Reddit</span>
       </span>
 
-      <form onSubmit={handleSearchSubmit} className="flex">
+      <form onSubmit={handleSearchSubmit} className="flex flex-col sm:flex-row sm:items-center">
         <input
           type="text"
           value={searchTerm}
           onChange={handleSearchChange}
           placeholder="Search..."
-          className="p-2 rounded-l-md bg-gray-500"
+          className="p-2 rounded-l-md bg-gray-500 mb-4 sm:mb-0 sm:mr-2"
         />
         <button
           type="submit"
