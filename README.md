@@ -21,8 +21,8 @@ This project is a Reddit client application that lists, searches, and displays d
 Clone this repository to your local machine:
 
 ```bash
-git clone https://github.com/your-username/reddit-client-app.git
-cd reddit-client-app
+git clone https://github.com/your-username/reddit-miniredditgi.git
+cd minireddit
 Install the dependencies:
 
 npm install
