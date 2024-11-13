@@ -4,10 +4,12 @@ import { fetchPostsBySearch } from "../store";
 import { clearSearchResults } from "../features/posts/postSlice";
 import { useDispatch } from "react-redux";
 import logo from "../assets/logo.jpg";
+
 function Header() {
   const [searchTerm, setSearchTerm] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
   const handleSearchChange = (e) => {
     setSearchTerm(e.target.value);
   };
@@ -20,7 +22,7 @@ function Header() {
   };
 
   return (
-    <header className="flex justify-between items-center p-4 bg-gray-800 text-white">
+    <header className="flex justify-between items-center p-4 bg-gray-950 text-white mb-5">
       <Link
         onClick={() => dispatch(clearSearchResults())}
         to="/"
@@ -29,9 +31,14 @@ function Header() {
         <img
           src={logo}
           alt="Logo"
-          className="h-12 w-auto sm:h-16 md:h-20 lg:h-24"
+          className="h-12 w-auto sm:h-16 md:h-20 lg:h-24 rounded-full"
         />
       </Link>
+
+      <span className="text-2xl font-bold text-blue-500 ml-20">
+        <span className="text-blue-500">mini</span>
+        <span className="text-white">Reddit</span>
+      </span>
 
       <form onSubmit={handleSearchSubmit} className="flex">
         <input
