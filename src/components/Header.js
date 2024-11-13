@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { fetchPostsBySearch } from "../store";
 import { clearSearchResults } from "../features/posts/postSlice";
 import { useDispatch } from "react-redux";
+import logo from "../assets/logo.jpg";
 function Header() {
   const [searchTerm, setSearchTerm] = useState("");
   const dispatch = useDispatch();
@@ -15,13 +16,21 @@ function Header() {
     e.preventDefault();
     dispatch(fetchPostsBySearch(searchTerm));
     navigate(`/search/${searchTerm}`);
-    setSearchTerm('')
+    setSearchTerm("");
   };
 
   return (
     <header className="flex justify-between items-center p-4 bg-gray-800 text-white">
-      <Link onClick={() => dispatch(clearSearchResults())} to="/" className="text-xl font-bold">
-        Logo
+      <Link
+        onClick={() => dispatch(clearSearchResults())}
+        to="/"
+        className="text-xl font-bold"
+      >
+        <img
+          src={logo}
+          alt="Logo"
+          className="h-12 w-auto sm:h-16 md:h-20 lg:h-24"
+        />
       </Link>
 
       <form onSubmit={handleSearchSubmit} className="flex">
@@ -45,4 +54,3 @@ function Header() {
 }
 
 export default Header;
-
